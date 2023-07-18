@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "nftBazaar_backend": {
+      "main": "src/nftBazaar_backend/main.mo",
+      "type": "motoko"
+    },
+    "nftBazaar_frontend": {
+      "dependencies": [
+        "nftBazaar_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/nftBazaar_frontend/src/index.html"
+      },
+      "source": [
+        "src/nftBazaar_frontend/assets",
+        "dist/nftBazaar_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
