@@ -1,3 +1,7 @@
+
+
+![Screenshot (181)](https://github.com/AdiTya-DiXiT-01/NFT_Bazaar/assets/74085890/0d8ef8ff-336d-4a0a-97fd-a74a66938302)
+
 # To Install and Run the Project
 
 1. start local dfx
@@ -21,6 +25,9 @@ dfx deploy --argument='("CryptoDunks #123", principal "zjyth-cak4t-e7sp5-uqe7z-3
 4. Head to localhost
 
 http://localhost:8080/
+
+![Screenshot (182)](https://github.com/AdiTya-DiXiT-01/NFT_Bazaar/assets/74085890/30d63476-84c8-4095-bef9-f6014b8c06ef)
+
 
 # Creating NFT for Testing
 
