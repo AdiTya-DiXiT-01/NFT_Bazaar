@@ -1,0 +1,11 @@
+{
+  "nft": {
+    "ic": "vfbcn-6aaaa-aaaag-abtpa-cai"
+  },
+  "nftBazaar_backend": {
+    "ic": "vcaez-tyaaa-aaaag-abtpq-cai"
+  },
+  "nftBazaar_frontend": {
+    "ic": "q6364-yqaaa-aaaag-abtqa-cai"
+  }
+}

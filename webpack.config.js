@@ -17,7 +17,7 @@ module.exports = {
   entry: {
     // The frontend.entrypoint points to the HTML file for this build, so we need
     // to replace the extension to `.js`.
-    index: path.join(__dirname, frontend_entry).replace(/\.html$/, ".js"),
+    index: path.join(__dirname, frontend_entry).replace(/\.html$/, ".jsx"),
   },
   devtool: isDevelopment ? "source-map" : false,
   optimization: {
@@ -44,12 +44,13 @@ module.exports = {
   // webpack configuration. For example, if you are using React
   // modules and CSS as described in the "Adding a stylesheet"
   // tutorial, uncomment the following lines:
-  // module: {
-  //  rules: [
-  //    { test: /\.(ts|tsx|jsx)$/, loader: "ts-loader" },
-  //    { test: /\.css$/, use: ['style-loader','css-loader'] }
-  //  ]
-  // },
+  module: {
+    rules: [
+      { test: /\.(ts|tsx|jsx)$/, loader: "ts-loader" },
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      { test: /\.(png|jpe?g|gif)$/i, use: [{ loader: 'file-loader' }] }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, frontend_entry),
@@ -80,13 +81,7 @@ module.exports = {
   // if you edit dfx.json to define a project-specific local network, change the port to match.
   devServer: {
     proxy: {
-      "/api": {
-        target: "http://127.0.0.1:4943",
-        changeOrigin: true,
-        pathRewrite: {
-          "^/api": "/api",
-        },
-      },
+      '/api': 'http://localhost:8080', // Replace with the correct URL of your Express server
     },
     static: path.resolve(__dirname, "src", frontendDirectory, "assets"),
     hot: true,
@@ -94,3 +89,14 @@ module.exports = {
     liveReload: true,
   },
 };
+
+
+// proxy: {
+//   "/api": {
+//     target: "http://127.0.0.1:4943",
+//     changeOrigin: true,
+//     pathRewrite: {
+//       "^/api": "/api",
+//     },
+//   },
+// },

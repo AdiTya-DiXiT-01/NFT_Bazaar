@@ -4,6 +4,10 @@
       "main": "src/nftBazaar_backend/main.mo",
       "type": "motoko"
     },
+    "nft": {
+      "main": "src/NFT/nft.mo",
+      "type": "motoko"
+    },
     "nftBazaar_frontend": {
       "dependencies": [
         "nftBazaar_backend"
